@@ -4,12 +4,14 @@ import lombok.Data;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
 public class Member {
     @Id @GeneratedValue
-    @Column(name = "MEMVER_ID")
+    @Column(name = "MEMBER_ID")
     private String id;
     
     private String username;
@@ -17,4 +19,7 @@ public class Member {
     private String city;
     private String street;
     private String zipcode;
+
+    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<Order>();
 }
