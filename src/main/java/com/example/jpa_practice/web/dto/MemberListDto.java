@@ -6,12 +6,12 @@ import lombok.Getter;
 @Getter
 public class MemberListDto {
 
-    private String id;
-    private String username;
+    private Long id;
+    private String name;
 //    private Integer age;
     public MemberListDto(Member entity){
         this.id = entity.getId();
-        this.username = entity.getUsername();
+        this.name = entity.getName();
 //        this.age = entity.getAge();
     }
 }

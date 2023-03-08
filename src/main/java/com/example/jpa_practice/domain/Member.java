@@ -7,14 +7,14 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
 @Data
+@Entity
 public class Member extends BaseEntity{
     @Id @GeneratedValue
     @Column(name = "MEMBER_ID")
-    private String id;
+    private Long id;
     
-    private String username;
+    private String name;
 //    private Integer age;
 //    private String city;
 //    private String street;
