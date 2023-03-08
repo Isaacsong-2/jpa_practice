@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "DTYPE")
-public class Item {
+public abstract class Item {
 
     @Id
     @GeneratedValue
@@ -24,4 +24,21 @@ public class Item {
 
     @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<Category>();
+
+    public void addStock(int quantity){
+        this.stockQuantity += quantity;
+    }
+
+    public void removeStock(int quantity) throws NotEnoughStockException {
+        int restStock = this.stockQuantity - quantity;
+        if (restStock < 0){
+            throw new NotEnoughStockException("need more stock");
+        }
+        this.stockQuantity = restStock;
+    }
+
+    private class NotEnoughStockException extends Throwable {
+        public NotEnoughStockException(String need_more_stock) {
+        }
+    }
 }
