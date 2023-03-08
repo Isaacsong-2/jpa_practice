@@ -8,10 +8,10 @@ public class MemberListDto {
 
     private String id;
     private String username;
-    private Integer age;
+//    private Integer age;
     public MemberListDto(Member entity){
         this.id = entity.getId();
         this.username = entity.getUsername();
-        this.age = entity.getAge();
+//        this.age = entity.getAge();
     }
 }

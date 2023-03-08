@@ -1,4 +1,4 @@
-package com.example.jpa_practice.domain;
+package com.example.jpa_practice.domain.item;
 
 import lombok.Data;
 
@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 @Data
 @Entity
 @DiscriminatorValue("B")
-public class Book extends Item{
+public class Book extends Item {
 
     private String author;
     private String actor;

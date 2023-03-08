@@ -1,5 +1,6 @@
 package com.example.jpa_practice.domain;
 
+import com.example.jpa_practice.domain.item.Item;
 import lombok.Data;
 
 import javax.persistence.*;

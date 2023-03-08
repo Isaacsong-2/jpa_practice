@@ -1,5 +1,6 @@
 package com.example.jpa_practice.domain;
 
+import com.example.jpa_practice.domain.item.OrderItem;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -27,7 +28,7 @@ public class Order extends BaseEntity{
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<OrderItem>();
 
-    @Temporal(TemporalType.TIMESTAMP)
+//    @Temporal(TemporalType.TIMESTAMP)
     private Date orderDate; //주문시간
 
     @Enumerated(EnumType.STRING)

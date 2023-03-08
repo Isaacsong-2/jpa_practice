@@ -15,7 +15,7 @@ public class Member extends BaseEntity{
     private String id;
     
     private String username;
-    
+//    private Integer age;
 //    private String city;
 //    private String street;
 //    private String zipcode;
