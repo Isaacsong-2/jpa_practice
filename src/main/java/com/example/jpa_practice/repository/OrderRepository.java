@@ -5,6 +5,7 @@ import com.example.jpa_practice.domain.Order;
 import com.example.jpa_practice.domain.OrderSearch;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
 import javax.persistence.EntityManager;
@@ -14,6 +15,7 @@ import javax.persistence.criteria.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class OrderRepository{
     @PersistenceContext
     EntityManager em;

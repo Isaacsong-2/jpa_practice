@@ -67,7 +67,7 @@ public class Order extends BaseEntity{
     }
 
     //==연관관계 메소드==//
-    public void setMember(Member memeber){
+    public void setMember(Member member){
         //기존 관계 제거
         if (this.member != null){
             this.member.getOrders().remove(this);
