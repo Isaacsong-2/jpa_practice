@@ -29,16 +29,11 @@ public abstract class Item {
         this.stockQuantity += quantity;
     }
 
-    public void removeStock(int quantity) throws NotEnoughStockException {
+    public void removeStock(int quantity){
         int restStock = this.stockQuantity - quantity;
         if (restStock < 0){
             throw new NotEnoughStockException("need more stock");
         }
         this.stockQuantity = restStock;
-    }
-
-    private class NotEnoughStockException extends Throwable {
-        public NotEnoughStockException(String need_more_stock) {
-        }
     }
 }
