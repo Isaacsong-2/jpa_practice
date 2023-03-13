@@ -41,13 +41,13 @@ public class OrderService {
     //주문 취소
     public void cancelOrder(Long orderId){
         //주문 엔티티 조회
-        Order order = orderRepository.findOne(orderId);
+        Order order = orderRepository.getById(orderId);
         //주문취소
         order.cancel();
     }
 
     //주문검색
     public List<Order> findOrders(OrderSearch orderSearch){
-        return orderRepository.findAll(orderSearch);
+        return orderRepository.findAll(orderSearch.toSpecification());
     }
 }
